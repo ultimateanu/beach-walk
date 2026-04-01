@@ -1,4 +1,5 @@
 bazel_dep(name = "rules_cc", version = "0.2.17")
+bazel_dep(name = "stb", version = "0.0.0-20251026-f1c79c0")
 bazel_dep(name = "toolchains_llvm", version = "1.6.0")
 
 # Configure and register the llvm (clang) toolchain.
