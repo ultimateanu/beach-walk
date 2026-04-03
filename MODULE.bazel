@@ -9,5 +9,11 @@ llvm.toolchain(
     llvm_version = "18.1.8",
 )
 use_repo(llvm, "llvm_toolchain")
+# register_toolchains("@llvm_toolchain//:all")
 
-register_toolchains("@llvm_toolchain//:all")
+bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
+git_override(
+    module_name = "hedron_compile_commands",
+    commit = "2dc498f24587eccc2752f8a892da004d9baa8318",
+    remote = "https://github.com/ultimateanu/bazel-compile-commands-extractor",
+)

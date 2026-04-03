@@ -51,3 +51,6 @@
 *.app
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,bazel
+
+# Compilation database for clangd
+compile_commands.json
