@@ -30,6 +30,7 @@ test: ## (@main) Run unit tests
 	bazelisk test //src/...
 
 clean: ## (@main) Clean local build artifacts
+	rm -f compile_commands.json
 	bazelisk clean
 
 push-all: ## (@main) Push main to multiple places
@@ -37,3 +38,7 @@ push-all: ## (@main) Push main to multiple places
 	git push codeberg
 	git push gitlab
 	git push bitbucket
+
+## Targets
+compile_commands.json:
+	bazel run @hedron_compile_commands//:refresh_all
